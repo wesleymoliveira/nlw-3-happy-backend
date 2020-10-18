@@ -7,7 +7,7 @@ import SessionController from '../src/controllers/SessionController';
 import uploadConfig from './config/upload';
 import OrphanagesController from './controllers/OrphanagesController';
 
-import authMiddleware from '../src/middlewares/auth';
+//import authMiddleware from '../src/middlewares/auth';
 
 const routes = Router();
 const upload = multer(uploadConfig);
