@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction} from 'express';
+/* import { Request, Response, NextFunction} from 'express';
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
@@ -22,4 +22,4 @@ export default async (req: Request, res: Response, next: NextFunction) => {
   } catch (err) {
     return res.status(401).json({ erro: 'Token inválido' });
   }
-};
+}; */
