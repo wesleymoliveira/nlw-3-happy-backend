@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import multer from 'multer';
 
-import UserController from '../src/controllers/UsersController';
-import SessionController from '../src/controllers/SessionController';
+import UserController from './controllers/UsersController';
+import SessionController from './controllers/SessionController';
 
 import uploadConfig from './config/upload';
 import OrphanagesController from './controllers/OrphanagesController';
 
-import authMiddleware from '../src/middlewares/auth';
+import authMiddleware from './middlewares/auth';
 
 const routes = Router();
 const upload = multer(uploadConfig);
