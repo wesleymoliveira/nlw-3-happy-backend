@@ -1,8 +1,7 @@
-import { Request, Response, NextFunction} from 'express';
-import jwt from 'jsonwebtoken';
-import { promisify } from 'util';
+import { Request, Response, NextFunction } from "express";
+import jwt from "jsonwebtoken";
 
-import authConfig from '../config/auth';
+import authConfig from "../config/auth";
 
 interface TokenPayload {
   id: string;
@@ -14,20 +13,21 @@ export default async (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({ erro: 'Rota não autorizada!' });
+    return res.status(401).json({ erro: "Rota não autorizada!" });
   }
 
-  const [, token] = authHeader.split(' ');
+  const [, token] = authHeader.split(" ");
 
   try {
-    const decoded  = await promisify(jwt.verify)(token, authConfig.secret);
+    //const decoded = await promisify(jwt.verify)(token, authConfig.secret);
+    const data = jwt.verify(token, authConfig.secret);
 
-    const { id } = decoded as TokenPayload;
+    const { id } = data as TokenPayload;
 
     req.userId = id;
 
     return next();
-  } catch (err) {
-    return res.status(401).json({ erro: 'Token inválido' });
+  } catch {
+    return res.status(401).json({ erro: "Token inválido" });
   }
 };
