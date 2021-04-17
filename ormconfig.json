@@ -1,13 +1,13 @@
 {
   "type": "postgres",
-  "host": "localhost",
+  "host": "ec2-3-217-219-146.compute-1.amazonaws.com",
   "port": 5432,
-  "username": "nlw3",
-  "password": "nlw3",
-  "database": "nlw3",
-  "entities": ["src/models/*.ts"],
-  "migrations": ["src/database/migrations/*.ts"],
+  "username": "ccrujlwcmsswow",
+  "password": "aa2f0e991c0763c06e6b12ccefe8dab6940eca715b6c0475a58d852f3200bacc",
+  "database": "daoraa3adju61j",
+  "entities": ["./dist/models/*.js"],
+  "migrations": ["./dist/database/migrations/*.js"],
   "cli": {
-    "migrationsDir": "src/database/migrations"
+    "migrationsDir": "./dist/database/migrations"
   }
 }
