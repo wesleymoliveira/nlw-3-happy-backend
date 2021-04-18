@@ -1,9 +1,11 @@
-import "reflect-metadata";
-import "dotenv/config";
 import path from "path";
+
+import "dotenv/config";
+import "reflect-metadata";
 import express from "express";
 import "express-async-errors";
 import cors from "cors";
+
 import "./database/connection";
 import routes from "./routes";
 import errorHandler from "./errors/handler";
