@@ -10,6 +10,10 @@ interface TokenPayload {
 }
 
 export default async (req: Request, res: Response, next: NextFunction) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
