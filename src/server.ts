@@ -25,6 +25,14 @@ app.use((req, res, next) => {
   }
   next();
 });
+app.use(
+  cors({
+    origin: "https://happy-nlw3-wesley.herokuapp.com",
+    credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  })
+);
+
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 app.use(routes);
